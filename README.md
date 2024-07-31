@@ -1,5 +1,7 @@
 # Net Tools API
 
+    Forked from [mulesoft-labs/net-tools-api](https://github.com/mulesoft-labs/net-tools-api), which has been archived and is no longer maintained.  I moved the project here as I have been the maintainer for the last few years.
+
 The Net Tools API is a deployable Mule app that you can deploy to CloudHub or any worker cloud. The app will then expose a very simple UI that will allow you to do basic networking commands. The idea is that most networking related issues with your CloudHub VPC and VPN are related to connectivity to your on-prem systems, and most of those issues end up being resolved on the customer end. If you have this tool available to you, you can work with your Networking team to test connectivity to various on-prem systems and verify that firewall and routing rules are working.  It can also be used to generate some traffic that can help with diagnosing networking issues.
 
 This supports HTTP and HTTPS connections with a configurable port for each.
@@ -16,7 +18,7 @@ This supports HTTP and HTTPS connections with a configurable port for each.
 
 ## Latest build
 
-Latest build can be found here: https://github.com/mulesoft-labs/net-tools-api/releases
+Release packages are not maintained.  Build locally and deploy as needed.
 
 # Usage
 
@@ -50,7 +52,11 @@ The properties below can be set on the app to override the default settings.  Th
 - [Enable Last Mile Security in RTF](https://help.mulesoft.com/s/article/How-to-Enable-both-Last-Mile-Security-and-Mutual-TLS-in-Runtime-Fabric)
 
 # Maintenance
-This uses the JS libraries below.
+
+## JS Libraries
+This uses the JS libraries for web component.
 - jQuery 1.11.3 [min](https://code.jquery.com/jquery-1.11.3.min.js) and [map](https://code.jquery.com/jquery-1.11.3.min.map).
 - [Toastr](https://github.com/CodeSeven/toastr) 2.1.4 [min, map, and css](https://cdnjs.com/libraries/toastr.js).
 
+## Spring Support
+This uses the Spring Security [AuthenticationManager](https://docs.spring.io/spring-security/reference/servlet/appendix/namespace/authentication-manager.html) for Basic Auth.  Update to the latest [Mule Spring Module](https://docs.mulesoft.com/release-notes/connector/spring-module-release-notes).  Based on its compatibility with Spring Core and Sprint Security in the Release Notes, then update those versions as well.
